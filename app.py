@@ -7,6 +7,10 @@ app = FastAPI()
 chroma = chromadb.PersistentClient(path="./db")
 collection = chroma.get_or_create_collection("docs")
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.post("/query")
 def query(q: str):
     results = collection.query(query_texts=[q], n_results=1)
