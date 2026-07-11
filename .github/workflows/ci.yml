@@ -2,10 +2,7 @@ name: RAG CI Pipeline
 
 on:
   push:
-    paths:
-      - 'k8s.txt'
-      - 'app.py'
-      - 'embed.py'
+  workflow_dispatch:
 
 jobs:
   test-and-build:
