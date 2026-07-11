@@ -18,7 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install fastapi uvicorn chromadb requests httpx pytest pydantic python-dotenv
+           python -m pip install --upgrade pip
+           pip install -r requirements.txt
 
       - name: Rebuild embeddings
         run: python embed_docs.py
