@@ -10,7 +10,6 @@ on:
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install fastapi uvicorn chromadb requests
+          pip install fastapi uvicorn chromadb requests httpx pytest pydantic python-dotenv
 
       - name: Rebuild embeddings
         run: python embed.py
